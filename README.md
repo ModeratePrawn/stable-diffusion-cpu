@@ -1,3 +1,103 @@
+# Stable Diffusion CPU only
+
+This fork of Stable-Diffusion doesn't require a high end graphics card and runs exclusively on your cpu. It's been tested on Linux Mint 22.04 and Windows 10.
+
+This isn't the fastest experience you'll have with stable diffusion but it does allow you to use it and most of the current set of features floating around on the internet such as txt2img, img2img, image upscaling with Real-ESRGAN and better faces with GFPGAN.
+
+A install guide video is located here. https://www.youtube.com/watch?v=mTrA4uDiKzU&t=644s
+
+
+##
+  
+## Requirements
+
+### Windows and Linux requirements
+
+Install Anaconda
+https://www.anaconda.com/
+Yes even on a linux system anaconda needs to be installed. 
+
+### Windows 
+
+##### Install Visual Studio Community Edition to build 1 file. 
+Click on the free download and make sure to check "Desktop Development with C++" when installing as per this image
+(https://learn.microsoft.com/en-us/cpp/get-started/media/vs2022-installer-workloads.png?view=msvc-170)
+
+
+https://visualstudio.microsoft.com/downloads/?q=build+tools
+
+
+
+##### Install Git
+https://git-scm.com/downloads
+version control manager for code 
+we just use it to download repos from GitHub
+Must be on system PATH, When installing select the option add to system PATH
+
+##### Install Wget
+used to download models for projects
+Windows users need this verison
+https://eternallybored.org/misc/wget/
+download the .exe and I copied it to my C:/Windows/System directory (this isn't the correct way just the fastest to get it working)
+
+
+reboot your system just to make sure everything is properly loaded up.
+
+### Linux Mint 22.04
+
+Install git and wget with the following command
+```
+sudo apt-get -y install git wget build-essential
+```
+## Installation of Stable-Diffusion-cpuonly
+
+### Download Stable-Diffusion-cpuonly
+
+Copy this github repository and extract the files.
+
+### Download the CompVis Stable-diffusion model.
+
+Go here and download the correct mode from here. You'll have to agree to the license setup an account but this is the bread and butter AI art generating learning model.
+
+https://huggingface.co/CompVis/stable-diffusion-v-1-4-original
+
+copy the file to your stable-diffusion-cpuonly-main directory
+
+### Download the GFPGAN model
+
+https://github.com/TencentARC/GFPGAN/releases/download/v1.3.0/GFPGANv1.3.pth
+
+copy the file to your stable-diffusion-cpuponly-main directory
+
+### Windows - Running the install script
+
+open a terminal or powershell and cd to your stable-diffusion-cpuonly-main directory and run
+```
+.\install_sdco.bat
+```
+
+### Linux - Running the install script
+open a terminal or powershell and cd to your stable-diffusion-cpuonly-main directory and run
+```
+bash -i install_sdco.sh
+```
+
+## Windows - Starting Stable-Diffusion-cpuonly
+
+Run the following command
+
+```
+.\run_sdco.bat
+```
+## Linux - Starting Stable-Diffusion-cpuonly
+
+Run the following command
+
+```
+bash -i run_sdco.sh
+```
+
+
 # Stable Diffusion
 *Stable Diffusion was made possible thanks to a collaboration with [Stability AI](https://stability.ai/) and [Runway](https://runwayml.com/) and builds upon our previous work:*
 
@@ -19,23 +119,8 @@ this model uses a frozen CLIP ViT-L/14 text encoder to condition the model on te
 With its 860M UNet and 123M text encoder, the model is relatively lightweight and runs on a GPU with at least 10GB VRAM.
 See [this section](#stable-diffusion-v1) below and the [model card](https://huggingface.co/CompVis/stable-diffusion).
 
-  
-## Requirements
-A suitable [conda](https://conda.io/) environment named `ldm` can be created
-and activated with:
+##
 
-```
-conda env create -f environment.yaml
-conda activate ldm
-```
-
-You can also update an existing [latent diffusion](https://github.com/CompVis/latent-diffusion) environment by running
-
-```
-conda install pytorch torchvision -c pytorch
-pip install transformers==4.19.2 diffusers invisible-watermark
-pip install -e .
-``` 
 
 
 ## Stable Diffusion v1

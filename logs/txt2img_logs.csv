@@ -1,0 +1,2 @@
+prompt,outdir,skip_grid,skip_save,ddim_steps,fixed_code,ddim_eta,n_iter,H,W,C,f,n_samples,n_rows,scale,device,from_file,seed,unet_bs,turbo,precision,format
+a painting of a virus monster playing guitar,outputs/txt2img-samples,False,False,50,False,0.0,1,512,512,4,8,5,0,7.5,cuda,,99270,1,False,autocast,png
